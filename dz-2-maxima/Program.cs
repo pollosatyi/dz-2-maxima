@@ -5,7 +5,18 @@
     {
         public static List<List<string>> Chunked(List<string> list, int n)
         {
-            // реализуйте функцию
+           var newList= new List<List<string>>();
+            
+            for(int i=0;i<list.Count;i++)
+            {
+                List<string> chunks = new List<string>();
+                for (int j = i; j < n; j++)
+                {
+                    chunks.Add(list[i]);
+                }
+                newList.Add(chunks);
+            }
+            return newList;
         }
         static void Main(string[] args)
         {
