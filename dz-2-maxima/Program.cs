@@ -7,12 +7,12 @@
         {
            var newList= new List<List<string>>();
             
-            for(int i=0;i<list.Count;i++)
+            for(int i=0;i<list.Count;i+=n)
             {
                 List<string> chunks = new List<string>();
-                for (int j = i; j < n; j++)
+                for (int j = i; j < i+n&&j<list.Count; j++)
                 {
-                    chunks.Add(list[i]);
+                    chunks.Add(list[j]);
                 }
                 newList.Add(chunks);
             }
@@ -23,6 +23,13 @@
             List<string> list = new List<string>() { "a","b","c","d","e","f" };
             int n = 2;
             var chunked = Chunked(list, n);
+            foreach(var chunk in chunked)
+            {
+                foreach(var chunk2 in chunk)
+                {
+                    Console.WriteLine(chunk2.ToString());
+                }
+            }
         }
     }
 }
