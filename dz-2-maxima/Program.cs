@@ -14,9 +14,18 @@ namespace dz_2_maxima
             for (int i = 0; i < spisok.Length; i++)
             {
                 var spisokTemp = new List<string>();
-                 spisokTemp.Add(spisok[i]);
-                podSpisoks.Add(spisokTemp);
-            }
+                for (int j = 0; j < spisok.Length; j++)
+                {
+                     spisokTemp.Add(spisok[j]);
+                    if (spisokTemp.Count > i)
+                    {
+                        j -= i;
+                        podSpisoks.Add(spisokTemp);
+                        spisokTemp= new List<string>();
+                    }
+                }
+            }   
+            
             return podSpisoks;
         }
         
@@ -36,7 +45,8 @@ namespace dz_2_maxima
 
         static void Main(string[] args)
         {
-
+            
+            PrintSpisok(PodSpisok("1 2 3 0"));
             
         }
     }
