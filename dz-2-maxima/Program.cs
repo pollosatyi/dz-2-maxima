@@ -22,6 +22,13 @@
             List<string> list = new List<string>() { "a","b","c","d","e","f" };
             int n = 2;
             var chunked = Chunked(list, n);
+            foreach(var chunk in chunked)
+            {
+                foreach(var chunk2 in chunk)
+                {
+                    Console.WriteLine(chunk2.ToString());
+                }
+            }
         }
     }
 }
