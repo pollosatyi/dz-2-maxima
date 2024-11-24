@@ -32,8 +32,8 @@ namespace dz_2_maxima
 
         public static void PrintSpisok(List<List<string>>podSpisoks)
         {
-            Console.Write("[");
-            for(int i = 0; i < podSpisoks.Count; i++)
+            Console.Write("[[], ");
+            for(int i = 1; i < podSpisoks.Count; i++)
             {
                 Console.Write("[");
                 for(int j = 0; j < podSpisoks[i].Count; j++)
@@ -41,7 +41,9 @@ namespace dz_2_maxima
                     Console.Write("\'"+podSpisoks[i][j]+"\'");
                     if (j < podSpisoks[i].Count-1)Console.Write(", ");
                 }
+               
                 Console.Write("]");
+                if (i < podSpisoks.Count - 1) Console.Write(", ");
             }
             Console.Write("]");
         }
