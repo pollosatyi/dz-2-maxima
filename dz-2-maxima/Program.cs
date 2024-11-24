@@ -39,7 +39,8 @@ namespace dz_2_maxima
 
         static void Main(string[] args)
         {
-
+            
+            PrintSpisok(PodSpisok("a b"));
             
         }
     }
