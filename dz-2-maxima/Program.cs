@@ -9,7 +9,7 @@
             for(int i = 0; i < list.Count; i+=n)
             {
                 List<string> chunk = new List<string>();
-                for(int j = i; j < i + n; j++)
+                for(int j = i; j < i + n&&j<list.Count; j++)
                 {
                     chunk.Add(list[j]);
                 }
